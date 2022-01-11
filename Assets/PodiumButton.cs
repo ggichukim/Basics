@@ -16,6 +16,8 @@ public class PodiumButton : MonoBehaviour
     public Material objectMat;
     private AudioSource audioSource;
     public GameObject canvas;
+    public Animator animator;
+
 
 
     // Start is called before the first frame update
@@ -45,6 +47,10 @@ public class PodiumButton : MonoBehaviour
                     else if (buttonID == 2)
                     {
                         ToggleCanvas();
+                    }
+                    else if (buttonID == 3)
+                    {
+                        RaiseDoor();
                     }
 
                 }
@@ -88,5 +94,9 @@ public class PodiumButton : MonoBehaviour
         canvas.SetActive(!canvas.activeSelf);
     }
 
+    void RaiseDoor()
+    {
+        animator.SetBool("play", true);
+    }
     
 }
